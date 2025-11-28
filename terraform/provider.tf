@@ -5,6 +5,13 @@ terraform {
       version = "~> 6.0"
     }
   }
+  backend "s3" {
+    bucket       = "kevinding-4640"
+    key          = "terraform.tfstate"
+    region       = "us-west-2"
+    encrypt      = true
+    use_lockfile = true
+  }
 }
 
 provider "aws" {
